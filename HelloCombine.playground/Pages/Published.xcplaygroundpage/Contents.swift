@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 final class SomeViewModel {
-    @Published var name: String = "Jack" // 퍼블리셔
+    @Published var name: String = "Jack" // 퍼블리셔 / 초기값을 가지는 CurrentValueSubject 비슷..
     var age: Int = 20
 }
 
@@ -14,6 +14,8 @@ let label = Label()
 let vm = SomeViewModel()
 
 print("text: \(label.text)")
+vm.name = "???"
+vm.name = "..."
 
 // $name 퍼블리셔 접근 가능
 // assign: Publisher가 제공한 데이터를 특정 객체의 키패스에 할당
